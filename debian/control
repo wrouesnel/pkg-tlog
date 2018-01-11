@@ -1,0 +1,64 @@
+Source: tlog
+Section: admin
+Priority: optional
+Maintainer: Will Rouesnel <w.rouesnel@gmail.com>
+Build-Depends: debhelper (>= 9.20160709), 
+  gcc (>= 4:7.2),
+  make (>= 4.1),
+  autoconf (>= 2.69),
+  dpkg-dev (>= 1.17.11),
+  libc6-dev (>= 2.24),
+  libjson-c-dev (>= 0.12.1),
+  libcurl4-nss-dev (>= 7.55.1),
+  libsystemd-dev (>= 234)
+Standards-Version: 4.1.1
+Vcs-Git: https://github.com/wrouesnel/pkg-tlog.git
+Vcs-Browser: https://github.com/wrouesnel/pkg-tlog
+
+Package: tlog
+Section: admin
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtlog0
+Description: Terminal I/O recording and playback package.
+ tlog is a terminal I/O recording and playback package suitable for 
+ implementing centralized user session recording. At the moment it is not ready 
+ for production and is to be considered development preview quality.
+ .
+ Whereas most other similar packages write the recorded data to a file in their
+ own format, or upload it to a custom server, tlog sends it to a logging 
+ service. The standard syslog interface is supported already, with journald 
+ possibly to come. The recorded data is encoded in JSON in a way which keeps it 
+ human-readable and searchable as much as possible.
+
+Package: libtlog0
+Section: libs
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: Terminal I/O recording and playback package (libraries)
+ tlog is a terminal I/O recording and playback package suitable for 
+ implementing centralized user session recording. At the moment it is not ready 
+ for production and is to be considered development preview quality.
+ .
+ Whereas most other similar packages write the recorded data to a file in their
+ own format, or upload it to a custom server, tlog sends it to a logging 
+ service. The standard syslog interface is supported already, with journald 
+ possibly to come. The recorded data is encoded in JSON in a way which keeps it 
+ human-readable and searchable as much as possible.
+ 
+Package: libtlog0-dev
+Section: libdevel
+Priority: optional
+Architecture: any
+Depends: ${misc:Depends}, libtlog
+Description: Terminal I/O recording and playback package (header files)
+ tlog is a terminal I/O recording and playback package suitable for 
+ implementing centralized user session recording. At the moment it is not ready 
+ for production and is to be considered development preview quality.
+ .
+ Whereas most other similar packages write the recorded data to a file in their
+ own format, or upload it to a custom server, tlog sends it to a logging 
+ service. The standard syslog interface is supported already, with journald 
+ possibly to come. The recorded data is encoded in JSON in a way which keeps it 
+ human-readable and searchable as much as possible.

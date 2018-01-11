@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh $@  --with systemd,autoreconf
+
+override_dh_auto_make:
+	make
+	
+override_dh_auto_configure:
+	dh_auto_configure -- $(shell dpkg-buildflags --export=configure) \
+		--disable-static

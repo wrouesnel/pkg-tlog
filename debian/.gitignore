@@ -1,0 +1,9 @@
+/*.substvars
+/*.log
+/.debhelper
+/files
+/tlog
+/libtlog0-dev
+/libtlog0
+/autoreconf.*
+/tmp
